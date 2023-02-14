@@ -27,7 +27,7 @@
                             provenance de la base de donnée (voir ci-dessous)</p>
                     </div>                                            
                     <footer>
-                        <small>♥1012 </small>
+                        <small> ♥1012 </small>
                         <a href="">#lorem</a>,
                         <a href="">#piscitur</a>,
                     </footer>
@@ -85,11 +85,11 @@
 
                 // Etape 3: Parcourir ces données et les ranger bien comme il faut dans du html
                 // NB: à chaque tour du while, la variable post ci dessous reçois les informations du post suivant.
-                while ($post = $lesInformations->fetch_assoc())
+                while ($fetchInfo = $lesInformations->fetch_assoc())
                 {
                     //la ligne ci-dessous doit etre supprimée mais regardez ce 
                     //qu'elle affiche avant pour comprendre comment sont organisées les information dans votre 
-                    echo "<pre>" . print_r($post, 1) . "</pre>";
+                    /* echo "<pre>" . print_r($post, 1) . "</pre>"; */
 
                     // @todo : Votre mission c'est de remplacer les AREMPLACER par les bonnes valeurs
                     // ci-dessous par les bonnes valeurs cachées dans la variable $post 
@@ -99,15 +99,21 @@
                     ?>
                     <article>
                         <h3>
-                            <time><?php echo $post['created'] ?></time>
+                            <time><?php echo $fetchInfo['created'] ?></time>
                         </h3>
-                        <address>AREMPLACER</address>
+                        <address> par <?php echo $fetchInfo['author_name'] ?></address>
                         <div>
-                            <p>AREMPLACER</p>
+                            <p><?php echo $fetchInfo['content'] ?></p>
                         </div>
-                        <footer>
-                            <small>♥ AREMPLACER </small>
-                            <a href="">AREMPLACER</a>,
+                        <footer>    
+                            <small>♥ <?php echo $fetchInfo['like_number'] ?> </small>    
+                            <?php $arrTags=explode(',',$fetchInfo['taglist']);        
+                            foreach ($arrTags as $tag) {           
+                                 ?>         
+                                   <a href="">#<?php echo $tag ?> </a>        
+                                   <?php       
+                                 }       
+                                  ?>
                         </footer>
                     </article>
                     <?php

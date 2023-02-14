@@ -1,3 +1,3 @@
 <?php
-    include("news.php"); 
+    include("admin.php"); 
 ?> 

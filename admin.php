@@ -73,7 +73,7 @@
                     // echo "<pre>" . print_r($tag, 1) . "</pre>";
                     ?>
                     <article>
-                        <h3><?php echo $user['alias'] ?></h3>
+                        <h3><a href="wall.php?user_id=<?php echo $user['id'] ?>"><?php echo $user['alias'] ?></a></h3>
                         <!-- <p><?php echo $user['id'] ?></p> -->
                         <nav>
                             <a href="wall.php?user_id=<?php echo $user['id'] ?>">Mur</a>

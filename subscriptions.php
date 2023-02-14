@@ -8,7 +8,7 @@
                 <section>
                     <h3>Présentation</h3>
                     <p>Sur cette page vous trouverez la liste des personnes dont
-                        l'utilisatrice <?php echo($user['alias']) ?>
+                        l'utilisatrice
                         n° <?php echo intval($_GET['user_id']) ?>
                         suit les messages
                     </p>
@@ -37,7 +37,7 @@
                     ?>
                     <article>
                     <img src="style/user.jpg" alt="blason"/>
-                        <h3><?php echo $post['alias'] ?></h3>
+                        <h3>  <a href="wall.php?user_id=<?php echo $post['id'] ?>"> <?php echo $post['alias'] ?> </a></h3>
                         <p> <?php echo $post['id']
                         ?></p>
                     </article>

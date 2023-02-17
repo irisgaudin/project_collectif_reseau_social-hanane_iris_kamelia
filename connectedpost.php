@@ -1,14 +1,5 @@
 
 
-
-        <div id="wrapper" >
-
-            <aside>
-                <h2>Présentation</h2>
-                <p>Sur cette page on peut poster un message en se faisant 
-                    passer pour quelqu'un d'autre</p>
-            </aside>
-            <main>
                 <article>
                     <h2>Poster un message</h2>
                     <?php
@@ -19,13 +10,6 @@
                     /**
                      * Récupération de la liste des auteurs
                      */
-                    $listAuteurs = [];
-                    $laQuestionEnSql = "SELECT * FROM users";
-                    $lesInformations = $mysqli->query($laQuestionEnSql);
-                    while ($user = $lesInformations->fetch_assoc())
-                    {
-                        $listAuteurs[$user['id']] = $user['alias'];
-                    }
 
 
                     /**
@@ -49,6 +33,7 @@
                         // pour éviter les injection sql : https://www.w3schools.com/sql/sql_injection.asp
                         $authorId = intval($mysqli->real_escape_string($authorId));
                         $postContent = $mysqli->real_escape_string($postContent);
+
                         //Etape 4 : construction de la requete
                         $lInstructionSql = "INSERT INTO posts (id, user_id, content, created, parent_id) "
                     . "VALUES (NULL, "
@@ -67,21 +52,15 @@
                         }
                     }
                     ?>                     
-                    <form action="usurpedpost.php" method="post">
-                        <input type='hidden' name='id' value='achanger'>
+                    <form action="wall.php?user_id=<?php echo $userId ?>" method="post">
+                        <input type='hidden' name='auteur' value='<?php echo $userId ?>'>
                         <dl>
-                            <dt><label for='auteur'>Auteur</label></dt>
-                            <dd><select name='user_id'>
-                                    <?php
-                                    foreach ($listAuteurs as $id => $alias)
-                                        echo "<option value='$id'>$alias</option>";
-                                    ?>
-                                </select></dd>
+                           
                             <dt><label for='message'>Message</label></dt>
-                            <dd><textarea name='content'></textarea></dd>
+                            <dd><textarea name='content'  cols="30" rows="5"></textarea></dd>
                         </dl>
                         <input type='submit'>
-                    </form>               
+                    </form>                
                 </article>
             </main>
         </div>

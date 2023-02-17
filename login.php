@@ -1,8 +1,4 @@
 <?php
-session_start();
-?>
-
-<?php
     include("header.php"); 
 ?>
 
@@ -63,8 +59,8 @@ session_start();
 
                             // Etape 7 : Se souvenir que l'utilisateur s'est connecté pour la suite
                             // documentation: https://www.php.net/manual/fr/session.examples.basic.php
-                            session_start();
-                             $_SESSION['connected_id']=$user['id'];
+                            
+                            $_SESSION['connected_id']=$user['id'];
 
 
                         }

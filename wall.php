@@ -22,6 +22,7 @@
             ?>
 
             <aside>
+                
                 <?php
                 /**
                  * Etape 3: récupérer le nom de l'utilisateur
@@ -38,13 +39,14 @@
                     <p>Sur cette page vous trouverez tous les message de l'utilisatrice :<?php echo($user['alias']) ?>
                         (n° <?php echo $userId ?>)
                     </p>
+                
+                    <?php  include("abonnement.php");?>
                 </section>
             </aside>
-        
-        
+            
             <main>
-
-                <article>
+            
+            <article>
                         <h2>Poster un message</h2>
 
                         <?php
@@ -121,9 +123,8 @@
                         </form>      
 
                 </article>
- 
 
-
+            
                 <?php
                 /**
                  * Etape 3: récupérer tous les messages de l'utilisatrice
@@ -146,7 +147,6 @@
                     echo("Échec de la requete : " . $mysqli->error);
                 }
 
-
                 /**
                  * Etape 4: @todo Parcourir les messsages et remplir correctement le HTML avec les bonnes valeurs php
                  */
@@ -154,8 +154,7 @@
                 {
 
                    // echo "<pre>" . print_r($post, 1) . "</pre>";
-                    ?>  
-                
+                    ?>                
                     <article>
                         <h3>
                              <time><?php echo $post['created'] ?></time>

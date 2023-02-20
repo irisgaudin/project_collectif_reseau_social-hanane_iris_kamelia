@@ -1,7 +1,14 @@
 <?php
     include("header.php"); 
-
 ?>
+
+<?php
+
+if (!isset($_SESSION['connected_id'])){
+    // echo("Acces refusé! Connectez-vous");
+    header("location:login.php");
+}
+?>  
 
         <div id="wrapper">
             <?php

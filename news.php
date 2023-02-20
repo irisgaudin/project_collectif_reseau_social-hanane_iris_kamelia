@@ -45,6 +45,7 @@
                     posts.created,
                     users.alias as author_name,
                     users.id as id,  
+                    posts.id as postId,
                     count(likes.id) as like_number,  
                     GROUP_CONCAT(DISTINCT tags.label) AS taglist 
                     FROM posts
@@ -68,7 +69,7 @@
 
                 // Etape 3: Parcourir ces données et les ranger bien comme il faut dans du html
                 // NB: à chaque tour du while, la variable post ci dessous reçois les informations du post suivant.
-                while ($fetchInfo = $lesInformations->fetch_assoc())
+                while ($post = $lesInformations->fetch_assoc())
                 {
                     //la ligne ci-dessous doit etre supprimée mais regardez ce 
                     //qu'elle affiche avant pour comprendre comment sont organisées les information dans votre 
@@ -82,15 +83,15 @@
                     ?>
                     <article>
                         <h3>
-                            <time><?php echo $fetchInfo['created'] ?></time>
+                            <time><?php echo $post['created'] ?></time>
                         </h3>
-                        <address> par <a href="wall.php?user_id=<?php echo $fetchInfo['id'] ?>"><?php echo $fetchInfo['author_name'] ?></a></address>
+                        <address> par <a href="wall.php?user_id=<?php echo $post['id'] ?>"><?php echo $post['author_name'] ?></a></address>
                         <div>
-                            <p><?php echo $fetchInfo['content'] ?></p>
+                            <p><?php echo $post['content'] ?></p>
                         </div>
                         <footer>    
-                            <small>♥ <?php echo $fetchInfo['like_number'] ?> </small>    
-                            <?php $arrTags=explode(',',$fetchInfo['taglist']);        
+                            <small><?php include('like.php') ?> </small>    
+                            <?php $arrTags=explode(',',$post['taglist']);        
                             foreach ($arrTags as $tag) {           
                                  ?>         
                                    <a href="">#<?php echo $tag ?> </a>        

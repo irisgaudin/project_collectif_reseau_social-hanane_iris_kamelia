@@ -1,7 +1,11 @@
 <?php
+
 session_start();
 $userid = $_SESSION['connected_id'];
+// var_dump($userid);
 ?>
+
+
 <!doctype html>
 <html lang="fr">
     <head>
@@ -15,8 +19,10 @@ $userid = $_SESSION['connected_id'];
 
     <body>
 
-        
-        <header>
+
+       
+
+                <header>
                 <img src="style/resoc.jpg" alt="Logo de notre réseau social"/>
                 <nav id="menu">
                     <a href="news.php">Actualités</a>
@@ -37,4 +43,8 @@ $userid = $_SESSION['connected_id'];
                 </nav>
 
         </header>
+
+        
+        
+        
 

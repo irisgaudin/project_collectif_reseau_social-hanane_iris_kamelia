@@ -1,6 +1,13 @@
 <?php
     include("header.php"); 
 ?>
+
+<?php
+if (!isset($_SESSION['connected_id'])){
+    echo("Acces refusé! Connectez-vous");
+    header("location:login.php");  
+}
+?>
         <div id="wrapper">          
             <aside>
                 <img src="style/user.jpg" alt = "Portrait de l'utilisatrice"/>

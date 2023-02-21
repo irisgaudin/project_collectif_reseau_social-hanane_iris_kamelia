@@ -60,6 +60,7 @@ if (!isset($_SESSION['connected_id'])){
                     posts.created,
                     users.alias as author_name,
                     users.id as id,  
+                    posts.id as postId,
                     count(likes.id) as like_number,  
                     GROUP_CONCAT(DISTINCT tags.label) AS taglist 
                     FROM followers 
@@ -94,7 +95,7 @@ if (!isset($_SESSION['connected_id'])){
                         <p><?php echo $post['content'] ?></p>
                         </div>                                            
                         <footer>
-                        <small>♥ <?php echo $post['like_number'] ?> </small>    
+                        <small><?php include('like.php') ?> </small>    
                             <?php $arrTags=explode(',',$post['taglist']);        
                             foreach ($arrTags as $tag) {           
                                  ?>         

@@ -137,7 +137,10 @@ if (!isset($_SESSION['connected_id'])){
                  * Etape 3: récupérer tous les messages de l'utilisatrice
                  */
                 $laQuestionEnSql = "
-                    SELECT posts.content, posts.created, users.alias as author_name, 
+                    SELECT posts.content, 
+                    posts.created,
+                     users.alias as author_name, 
+                    posts.id as postId,
                     COUNT(likes.id) as like_number, GROUP_CONCAT(DISTINCT tags.label) AS taglist 
                     FROM posts
                     JOIN users ON  users.id=posts.user_id
@@ -171,7 +174,7 @@ if (!isset($_SESSION['connected_id'])){
                         <p><?php echo $post['content'] ?></p>
                         </div>                                            
                         <footer>
-                        <small>♥ <?php echo $post['like_number'] ?> </small>    
+                        <small><?php include('like.php') ?> </small>    
                             <?php $arrTags=explode(',',$post['taglist']);        
                             foreach ($arrTags as $tag) {           
                                  ?>         

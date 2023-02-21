@@ -52,25 +52,30 @@
                         if (!$ok)
                         {
                             echo "L'inscription a échouée : " . $mysqli->error;
+                            ?> 
+                            
+                            <?php
+                            
                         } else
                         {
                             echo "Votre inscription est un succès : " . $new_alias;
-                            echo " <a href='login.php'>Connectez-vous.</a>";
+                            echo " <a href='login.php'>  Connectez-vous.</a>";
                         }
                     }
                     ?>                     
-                    <form action="registration.php" method="post">
-                        <input type='hidden'name='id'value='achanger'>
-                        <dl>
-                            <dt><label for='pseudo'>Pseudo</label></dt>
-                            <dd><input type='text'name='alias'></dd>
-                            <dt><label for='email'>E-Mail</label></dt>
-                            <dd><input type='email'name='email'></dd>
-                            <dt><label for='motpasse'>Mot de passe</label></dt>
-                            <dd><input type='password'name='password'></dd>
-                        </dl>
-                        <input type='submit'>
-                    </form>
+                        <form action="registration.php" method="post">
+                            <input type='hidden'name='id'value='achanger'>
+                            <dl>
+                                <dt><label for='pseudo'>Pseudo</label></dt>
+                                <dd><input type='text'name='alias'></dd>
+                                <dt><label for='email'>E-Mail</label></dt>
+                                <dd><input type='email'name='email'></dd>
+                                <dt><label for='motpasse'>Mot de passe</label></dt>
+                                <dd><input type='password'name='password'></dd>
+                            </dl>
+                            <input type='submit'>
+                        </form>
+                     
                 </article>
             </main>
         </div>

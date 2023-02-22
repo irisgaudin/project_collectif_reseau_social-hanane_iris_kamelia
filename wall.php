@@ -170,7 +170,7 @@ if (!isset($_SESSION['connected_id'])){
                                 <dt><label for='message'>Message</label></dt>
                                 <dd><textarea name='content'  cols="35" rows="8"  ></textarea></dd>
                             </dl>
-                            <input type='submit' >
+                            <input  type="submit">
                         </form>      
 
                 </article>

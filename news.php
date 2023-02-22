@@ -3,14 +3,7 @@
 
 ?>
         <div id="wrapper">
-            <aside>
-                <img src="style/user.jpg" alt="Portrait de l'utilisatrice"/>
-                <section>
-                    <h3>Présentation</h3>
-                    <p>Sur cette page vous trouverez les derniers messages de
-                        tous les utilisatrices du site.</p>
-                </section>
-            </aside>
+           
             <main>
                 <!-- L'article qui suit est un exemple pour la présentation et 
                   @todo: doit etre retiré -->              
@@ -81,7 +74,8 @@
                     // 
                     // avec le ? > ci-dessous on sort du mode php et on écrit du html comme on veut... mais en restant dans la boucle
                     ?>
-                    <article>
+                    <article id="news">
+                        
                         <h3>
                             <time><?php echo $post['created'] ?></time>
                         </h3>

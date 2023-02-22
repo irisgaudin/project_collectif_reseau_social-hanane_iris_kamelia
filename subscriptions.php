@@ -10,18 +10,7 @@ if (!isset($_SESSION['connected_id'])){
 }
 ?>
         <div id="wrapper">
-            <aside>
-                <img src="style/user.jpg" alt="Portrait de l'utilisatrice"/>
-                <section>
-                    <h3>Présentation</h3>
-                    <p>Sur cette page vous trouverez la liste des personnes dont
-                        l'utilisatrice
-                        n° <?php echo intval($_GET['user_id']) ?>
-                        suit les messages
-                    </p>
-
-                </section>
-            </aside>
+            
             <main class='contacts'>
                 <?php
                 // Etape 1: récupérer l'id de l'utilisateur

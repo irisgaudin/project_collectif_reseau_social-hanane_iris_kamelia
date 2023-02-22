@@ -4,13 +4,10 @@
 
         <div id="wrapper" >
 
-            <aside>
-                <h2>Présentation</h2>
-                <p>Bienvenu sur notre réseau social.</p>
-            </aside>
+           >
             <main>
                 <article>
-                    <h2>Connexion</h2>
+                    <h2>Bienvenue</h2>
                     <?php
                     /**
                      * TRAITEMENT DU FORMULAIRE
@@ -65,7 +62,8 @@
 
                         }
                     }
-                    ?>                     
+                    ?>  
+                    <div class="container">                  
                     <form action="login.php" method="post">
                         <input type='hidden'name='id' value='achanger'>
                         <dl>

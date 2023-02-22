@@ -29,7 +29,7 @@ if (!isset($_SESSION['connected_id'])){
             $mysqli = new mysqli("localhost", "root", "root", "socialnetwork");
             ?>
 
-            <aside>
+           
                 <?php
                 /**
                  * Etape 3: récupérer le nom de l'utilisateur
@@ -40,16 +40,7 @@ if (!isset($_SESSION['connected_id'])){
                 //@todo: afficher le résultat de la ligne ci dessous, remplacer XXX par l'alias et effacer la ligne ci-dessous
                // echo "<pre>" . print_r($user, 1) . "</pre>";
                 ?>
-                <img src="style/user.jpg" alt="Portrait de l'utilisatrice"/>
-                <section>
-                    <h3>Présentation</h3>
-                    <p>Sur cette page vous trouverez tous les message des utilisatrices
-                        auxquel est abonnée l'utilisatrice <?php echo($user['alias']) ?>
-                        (n° <?php echo $userId ?>)
-                    </p>
-
-                </section>
-            </aside>
+               
             <main>
                 <?php
                 /**
@@ -85,7 +76,7 @@ if (!isset($_SESSION['connected_id'])){
                 while ($post = $lesInformations->fetch_assoc())
                 {
                 ?>                
-                <article>
+                <article id ="feed">
                 <h3>
                              <time><?php echo $post['created'] ?></time>
                         </h3>
@@ -94,7 +85,7 @@ if (!isset($_SESSION['connected_id'])){
                         <p><?php echo $post['content'] ?></p>
                         </div>                                            
                         <footer>
-                        <small>♥ <?php echo $post['like_number'] ?> </small>    
+                        <small><?php include('like.php') ?> </small>    
                             <?php $arrTags=explode(',',$post['taglist']);        
                             foreach ($arrTags as $tag) {           
                                  ?>         

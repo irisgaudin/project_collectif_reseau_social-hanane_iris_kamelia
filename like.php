@@ -33,13 +33,15 @@ $enCoursDeTraitement = isset($_POST['like_number']);
                             echo "like saved";
                         }
                         
+                        
                     }
 
                     
 
                     ?>
-                     <form action="news.php" method="post" >
+                     <form method="post" >
                           <input type="hidden" name="like_number" value="1">
-                           <input type="submit" value="♥ <?php echo $post['like_number'] ?> ">  <!-- //ici la valeur/montant des likes est dynamique -->
+                          <input id="likebutton" type="submit" value="♥ <?php echo $post['like_number'] ?> ">  <!-- //ici la valeur/montant des likes est dynamique -->
 
                      </form>
+                     

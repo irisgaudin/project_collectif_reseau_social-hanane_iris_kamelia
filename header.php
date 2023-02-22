@@ -23,7 +23,7 @@ $userid = $_SESSION['connected_id'];
        
 
                 <header>
-                <img src="style/resoc.jpg" alt="Logo de notre réseau social"/>
+               
                 <nav id="menu">
                     <a href="news.php">Actualités</a>
                     <a href="wall.php?user_id=<?=$userid?>">Mur</a>

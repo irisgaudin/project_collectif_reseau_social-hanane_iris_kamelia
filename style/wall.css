@@ -3,6 +3,11 @@ body{
     background: linear-gradient(45deg, #FC466B, #3F5EFB);
     font-family: Arial;
 }
+body{
+    
+    background: linear-gradient(45deg, #FC466B, #3F5EFB);
+    font-family: Arial;
+}
 
 a{text-decoration: none; color:black;}
 a:hover{text-decoration: underline;}
@@ -119,7 +124,7 @@ main #wall{
 
 #wrapper main #message{
     
-    margin-left: 20PX;
+    margin-left: 150px;
     background: rgba(255, 255, 255, .3);
   padding: 3rem;
   height: 370px;
@@ -136,7 +141,7 @@ main #wall{
 }
 #wrapper main  #post{
     margin-top: 20px;
-  margin-left: 600px;
+    margin-left: 150px;
   width: 350px;
   height: 80px;
   

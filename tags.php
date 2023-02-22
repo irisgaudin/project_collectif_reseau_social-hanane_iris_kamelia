@@ -20,7 +20,7 @@
             $mysqli = new mysqli("localhost", "root", "root", "socialnetwork");
             ?>
 
-            <aside>
+           
                 <?php
                 /**
                  * Etape 3: récupérer le nom du mot-clé
@@ -31,16 +31,7 @@
                 //@todo: afficher le résultat de la ligne ci dessous, remplacer XXX par le label et effacer la ligne ci-dessous
                // echo "<pre>" . print_r($tag, 1) . "</pre>";
                 ?>
-                <img src="style/user.jpg" alt="Portrait de l'utilisatrice"/>
-                <section>
-                    <h3>Présentation</h3>
-                    <p>Sur cette page vous trouverez les derniers messages comportant
-                        le mot-clé <?php echo($tag['label']) ?>
-                        (n° <?php echo $tagId ?>)
-                    </p>
-
-                </section>
-            </aside>
+              
             <main>
                 <?php
                 /**
@@ -77,7 +68,7 @@
 
                     //echo "<pre>" . print_r($post, 1) . "</pre>";
                     ?>                
-                    <article>
+                    <article id="tag">
                         <h3>
                              <time><?php echo $post['created'] ?></time>
                         </h3>
@@ -86,7 +77,7 @@
                         <p><?php echo $post['content'] ?></p>
                         </div>                                            
                         <footer>
-                        <small>♥ <?php echo $post['like_number'] ?> </small>    
+                        <small><?php include('like.php') ?> </small>    
                             <?php $arrTags=explode(',',$post['taglist']);        
                             foreach ($arrTags as $tag) {           
                                  ?>         

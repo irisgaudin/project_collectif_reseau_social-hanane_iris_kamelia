@@ -96,8 +96,10 @@ main #wall{
     flex-direction: row;
 }
 #wrapper main{
+    
+    display: contents;
     flex:3;
-    padding-left:1em;
+    
     height: 80vh;
     overflow-y:  scroll;
     
@@ -138,6 +140,17 @@ main #wall{
   box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, .2);
   text-align: center;
    
+}
+#wrapper main #bloc{
+    margin-right: 30px;
+    margin-top: 8px;
+    padding: 10px;
+    background-color: #F1F1F1;
+   outline: none;
+    border-radius: 20px;
+    resize: none;
+    height: 72%;
+
 }
 #wrapper main  #post{
     margin-top: 20px;

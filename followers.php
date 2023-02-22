@@ -9,16 +9,7 @@ if (!isset($_SESSION['connected_id'])){
 }
 ?>
         <div id="wrapper">          
-            <aside>
-                <img src="style/user.jpg" alt = "Portrait de l'utilisatrice"/>
-                <section>
-                    <h3>Présentation</h3>
-                    <p>Sur cette page vous trouverez la liste des personnes qui
-                        suivent les messages de l'utilisatrice
-                        n° <?php echo intval($_GET['user_id']) ?> </p>
-
-                </section>
-            </aside>
+           
             <main class='contacts'>
                 <?php
                 // Etape 1: récupérer l'id de l'utilisateur
@@ -39,7 +30,7 @@ if (!isset($_SESSION['connected_id'])){
                 while ($post = $lesInformations->fetch_assoc())
                 {
                     ?>
-                    <article>
+                    <article id="liste">
                     <img src="style/user.jpg" alt="blason"/>
                         <h3> <a href="wall.php?user_id=<?php echo $post['id'] ?>"><?php echo $post['alias'] ?> </a></h3>
                         <p> <?php echo $post['id']

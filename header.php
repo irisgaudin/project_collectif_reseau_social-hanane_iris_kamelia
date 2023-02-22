@@ -29,6 +29,7 @@ $userid = $_SESSION['connected_id'];
                     <a href="wall.php?user_id=<?=$userid?>">Mur</a>
                     <a href="feed.php?user_id=<?=$userid?>">Flux</a>
                     <a href="tags.php?tag_id=1">Mots-clés</a>
+                    
                 </nav>
                 <nav id="user">
                     <a href="#">Profil</a>

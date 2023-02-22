@@ -168,14 +168,14 @@ if (!isset($_SESSION['connected_id'])){
                             <dl>
                             
                                 <dt><label for='message'>Message</label></dt>
-                                <dd><textarea name='content'  cols="35" rows="8"  ></textarea></dd>
+                                <dd><textarea id="bloc" name='content'  cols="30" rows="8"  ></textarea></dd>
                             </dl>
                             <input  type="submit">
                         </form>      
 
                 </article>
 
-            
+                <div > 
                 <?php
                 /**
                  * Etape 3: récupérer tous les messages de l'utilisatrice
@@ -209,7 +209,7 @@ if (!isset($_SESSION['connected_id'])){
 
                    // echo "<pre>" . print_r($post, 1) . "</pre>";
                     ?>  
-                    <div >              
+                               
                     <article id="post">
                     
                         <h3>
@@ -231,9 +231,9 @@ if (!isset($_SESSION['connected_id'])){
                         </footer>
                         
                     </article>
-                                </div>
+                               
                 <?php } ?>
-
+                </div>
 
             </main>
         </div>

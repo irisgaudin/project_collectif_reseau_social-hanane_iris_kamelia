@@ -116,6 +116,14 @@ main #wall{
 
 
 }
+#wrapper main #liste{
+    margin-top: 20px;
+    margin-left: 20PX;
+    width: 200px;
+    height: 50px;
+    
+
+}
 
 #wrapper main #message{
     
@@ -258,8 +266,9 @@ main #wall{
 .parameters dl dt{float:left;font-weight: bold;line-height: 1.5em;}
 .parameters dl dd{margin-left:15em;line-height: 1.5em;}
 
-.contacts {
+#wrapper .contacts {
     display:flex;
+    flex-direction: column;
     flex-wrap: wrap;
     align-items:flex-start;
     align-content: flex-start ;
@@ -270,8 +279,10 @@ main #wall{
     margin-right: 1em;
 }
 .contacts article img{
+    border-radius: 50%;
     float:right;
     height: 5em;
+    
 }
 
 pre{

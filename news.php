@@ -48,7 +48,6 @@
                     LEFT JOIN likes      ON likes.post_id  = posts.id 
                     GROUP BY posts.id
                     ORDER BY posts.created DESC  
-                    LIMIT 5
                     ";
                 $lesInformations = $mysqli->query($laQuestionEnSql);
                 // Vérification
@@ -66,7 +65,7 @@
                 {
                     //la ligne ci-dessous doit etre supprimée mais regardez ce 
                     //qu'elle affiche avant pour comprendre comment sont organisées les information dans votre 
-                    /* echo "<pre>" . print_r($post, 1) . "</pre>"; */
+                     "<pre>" . print_r($post, 1) . "</pre>"; 
 
                     // @todo : Votre mission c'est de remplacer les AREMPLACER par les bonnes valeurs
                     // ci-dessous par les bonnes valeurs cachées dans la variable $post 

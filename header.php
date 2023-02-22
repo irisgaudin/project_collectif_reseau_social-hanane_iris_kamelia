@@ -10,7 +10,7 @@ $userid = $_SESSION['connected_id'];
 <html lang="fr">
     <head>
         <meta charset="utf-8">
-        <title>ReSoC - Administration </title> 
+        <title>Women In Tech</title> 
         <meta name="author" content="Team Tech Empowerment">
         <link rel="stylesheet" href="style/style.css"/>
 

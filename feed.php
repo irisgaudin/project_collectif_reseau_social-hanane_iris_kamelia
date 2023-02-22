@@ -51,6 +51,7 @@ if (!isset($_SESSION['connected_id'])){
                     posts.created,
                     users.alias as author_name,
                     users.id as id,  
+                    posts.id as postId,
                     count(likes.id) as like_number,  
                     GROUP_CONCAT(DISTINCT tags.label) AS taglist 
                     FROM followers 
@@ -102,4 +103,3 @@ if (!isset($_SESSION['connected_id'])){
 
             </main>
         </div>
-
